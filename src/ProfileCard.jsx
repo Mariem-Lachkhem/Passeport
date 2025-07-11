@@ -1,5 +1,5 @@
 import React from 'react';
-import avatar from './assets/avatar.jpg'; // Vérifie que ce chemin est bon
+import avatar from './assets/avatar.jpg'; 
 import { FaUtensils, FaHome, FaCarAlt, FaLaptop } from 'react-icons/fa';
 import { FaBars, FaBell, FaBriefcase, FaMapMarkerAlt } from 'react-icons/fa';
 import { FaBoxArchive } from "react-icons/fa6";
@@ -17,7 +17,7 @@ const ProfileCard = ({
   transportCovered,
   computerProvided,
 }) => {
-  // Construire le tableau des icônes dynamiquement
+  
   const icons = [];
 
   if (meals > 0) {
@@ -77,15 +77,15 @@ const ProfileCard = ({
       </div>
 
 {/* Logistics  */}
-{/* Logistics Section */}
+
 <div className="bg-white rounded-xl shadow-md p-4 space-y-3">
-  {/* Titre avec icône */}
+  
   <div className="flex items-center gap-2 text-gray-800 font-semibold text-sm">
     <FaBoxArchive />
     <span>Logistics</span>
   </div>
 
-  {/* Grille des icônes */}
+  
   <div className="grid grid-cols-4 gap-3">
     {icons.map(({ icon, label }, idx) => (
       <div
@@ -95,7 +95,7 @@ const ProfileCard = ({
       >
         <div className="text-black text-xl">{icon}</div>
 
-        {/* Bulle bleue uniquement sur l’icône Food si meals > 1 */}
+        {/* blue bubble */}
         {label === "Food" && meals > 0 && (
           <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-600 rounded-full">
             {meals}
