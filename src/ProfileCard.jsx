@@ -77,30 +77,31 @@ const ProfileCard = ({
       </div>
 
 {/* Logistics  */}
-
 <div className="bg-white rounded-xl shadow-md p-4 space-y-3">
-  
+
   <div className="flex items-center gap-2 text-gray-800 font-semibold text-sm">
     <FaBoxArchive />
     <span>Logistics</span>
   </div>
 
-  
-  <div className="grid grid-cols-4 gap-3">
+
+  <div className="grid grid-cols-4 gap-4">
     {icons.map(({ icon, label }, idx) => (
-      <div
-        key={idx}
-        className="relative bg-gray-200 rounded-full w-14 h-14 flex items-center justify-center"
+      <div key={idx} className="flex flex-col items-center space-y-1">
+        
+        <div className="relative bg-gray-200 rounded-full w-14 h-14 flex items-center justify-center">
+          <div className="text-black text-xl">{icon}</div>
 
-      >
-        <div className="text-black text-xl">{icon}</div>
+          {/* blue bubble */}
+          {label === "Food" && meals > 0 && (
+            <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-600 rounded-full">
+              {meals}
+            </span>
+          )}
+        </div>
 
-        {/* blue bubble */}
-        {label === "Food" && meals > 0 && (
-          <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-600 rounded-full">
-            {meals}
-          </span>
-        )}
+    
+        <span className="text-xs text-gray-700 text-center font-bold">{label}</span>
       </div>
     ))}
   </div>
